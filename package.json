@@ -7,10 +7,6 @@
   "files": [
     "lib/**/*"
   ],
-  "exports": {
-    ".": "./lib/index.js",
-    "./searching": "./lib/searching/index.js"
-  },
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",

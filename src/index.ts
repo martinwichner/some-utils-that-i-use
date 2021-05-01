@@ -1,5 +1,3 @@
-import { A, objectContainsProperty, findMaxId } from './searching/search';
-import { add } from './calculator';
+import { objectContainsProperty, findMax } from './searching/search';
 
-export { A, objectContainsProperty, findMaxId };
-export { add };
+export { objectContainsProperty, findMax };
