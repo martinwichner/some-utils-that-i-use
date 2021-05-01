@@ -1,6 +1,6 @@
 {
   "name": "some-utils-that-i-use",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "some utils that i use",
   "types": "lib/index.d.ts",
   "main": "lib/index.js",
