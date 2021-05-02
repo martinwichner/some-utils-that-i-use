@@ -1,4 +1,110 @@
 {
-  "extends": ["tslint:recommended", "tslint-config-prettier"],
-  "rules": { "only-arrow-functions": false }
+  "extends": ["tslint:recommended", "tslint-clean-code", "tslint-eslint-rules", "codelyzer", "rxjs-tslint-rules", "tslint-sonarts", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": ["showcases/**", ".vscode/**", ".idea/**", "nginx/**"]
+  },
+  "rules": {
+    "no-duplicate-string": false,
+    "no-use-of-empty-return-value": false,
+    "parameters-max-number": false,
+    "no-commented-out-code": true,
+    "id-length": [true, ["T", "S", "R", "U", "i"]],
+    "no-complex-conditionals": true,
+    "prefer-dry-conditionals": true,
+    "max-func-args": [true, 4],
+    "rxjs-finnish": {
+      "options": [
+        {
+          "functions": false,
+          "methods": false,
+          "parameters": true,
+          "properties": false,
+          "variables": true
+        }
+      ],
+      "severity": "warning"
+    },
+    "rxjs-no-add": true,
+    "rxjs-no-deep-operators": true,
+    "rxjs-no-internal": true,
+    "rxjs-no-operator": true,
+    "rxjs-no-patched": true,
+    "rxjs-no-subject-unsubscribe": true,
+    "rxjs-no-unsafe-first": true,
+    "rxjs-no-unsafe-catch": true,
+    "rxjs-no-unsafe-switchmap": true,
+    "rxjs-no-unsafe-takeuntil": true,
+    "rxjs-no-unused-add": true,
+    "rxjs-no-wholesale": true,
+    // Codelyzer Rules
+    "component-class-suffix": true,
+    "directive-class-suffix": true,
+    "directive-selector": [true, "attribute", "app", "camelCase"],
+    "component-selector": [true, "element", "app", "kebab-case"],
+    "max-inline-declarations": true,
+    "no-input-rename": true,
+    "no-output-rename": true,
+    "use-life-cycle-interface": true,
+    "use-pipe-transform-interface": true,
+    "use-input-property-decorator": true,
+    "use-output-property-decorator": true,
+    "use-host-property-decorator": true,
+    "no-output-on-prefix": true,
+    // TSLint Rules
+    "prefer-template": true,
+    "variable-name": [true, "check-format", "allow-pascal-case"],
+    "await-promise": true,
+    "no-unused-variable": false,
+    "only-arrow-functions": false,
+    "ordered-imports": false,
+    "ban-types": {
+      "options": [
+        ["Object", "Avoid using the `Object` type. Did you mean `object`?"],
+        ["Function", "Avoid using the `Function` type. Prefer a specific function type, like `() => void`."],
+        ["Boolean", "Avoid using the `Boolean` type. Did you mean `boolean`?"],
+        ["Number", "Avoid using the `Number` type. Did you mean `number`?"],
+        ["String", "Avoid using the `String` type. Did you mean `string`?"],
+        ["Symbol", "Avoid using the `Symbol` type. Did you mean `symbol`?"],
+        ["Promise", "Avoid using `Promise`. Use `Observable` instead."]
+      ]
+    },
+    "interface-name": {
+      "options": "never-prefix",
+      "severity": "error"
+    },
+    "no-any": {
+      "severity": "warning"
+    },
+    "no-empty-interface": {
+      "severity": "error"
+    },
+    "no-import-side-effect": {
+      "severity": "warning"
+    },
+    "no-implicit-dependencies": false,
+    "no-submodule-imports": false,
+    "deprecation": {
+      "severity": "warning"
+    },
+    "import-blacklist": [true, "\\/.*?\\.\\.$", "../..", "../../..", "../../../..", "../../../../.."],
+    "no-inferrable-types": [true, "ignore-params"],
+    "no-empty": {
+      "severity": "warning"
+    },
+    "member-ordering": [
+      true,
+      {
+        "order": ["static-field", "instance-field", "constructor", "public-instance-method", "protected-instance-method", "private-instance-method"]
+      }
+    ],
+    "no-non-null-assertion": true,
+    "no-shadowed-variable": true,
+    "no-string-literal": false,
+    "no-switch-case-fall-through": true,
+    "no-for-in-array": true,
+    "no-duplicate-variable": true,
+    "object-literal-sort-keys": false,
+    "triple-equals": [true, "allow-null-check"],
+    "unified-signatures": true
+  }
 }
