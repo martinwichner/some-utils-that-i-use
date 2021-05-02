@@ -15,17 +15,13 @@ export const objectContainsProperty = (obj: any, property: string) => {
  * @returns the highest value of the given property, if items contains 0 items,* the items in the list do not have the property or the property is not a number it will return undefinded
  */
 export const findMax = (items: any[], prop: string) => {
-  if (items.length > 0) {
-    if (objectContainsProperty(items[0], prop)) {
-      if (!isNaN(Number(items[0][prop].toString()))) {
-        return Math.max.apply(
-          Math,
-          items.map(function (o) {
-            return o[prop];
-          }),
-        );
-      }
-    }
+  if (items.length > 0 && objectContainsProperty(items[0], prop) && !isNaN(Number(items[0][prop].toString()))) {
+    return Math.max.apply(
+      Math,
+      items.map(function (item) {
+        return item[prop];
+      }),
+    );
   }
   return undefined;
 };
